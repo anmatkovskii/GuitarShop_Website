@@ -1,0 +1,605 @@
+{% extends 'template.html' %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <div class="filters-block">
+        <div class="filters-name">
+            <hr><h1>Фільтри</h1>
+        </div>
+        <form class="form-horizontal" id="guitarForm" method="GET">
+            {% csrf_token %}
+            <fieldset>
+                <a class="SubmitBtn" onclick="submitForm()">Застосувати фільтри</a>
+                <a class="UnSubmitBtn" onclick="resetCheckboxState()" href="{% url 'catalogue' %}">Скинути фільтри</a>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes1"><h2>Ціновий діапазон</h2></label>
+                    <div class="minmax"><p>Мін</p></div>
+                    <div class="minmax1"><p>Мaкс</p></div>
+                    <div class="price_input">
+                        <label for="minPrice"></label>
+                        <input type="number" id="minPrice" name="minPrice">
+                        -
+                        <label for="maxPrice"></label>
+                        <input type="number" id="maxPrice" name="maxPrice">
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes1"><h2>Категорія</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Guitar">
+                                <input type="checkbox" name="type" id="Guitar" value="Guitar">
+                                <h3>Електрогітари</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Bass">
+                                <input type="checkbox" name="type" id="Bass" value="Bass">
+                                <h3>Бас-гітари</h3>
+                            </label>
+                        </div>
+                    </div>   
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes2"><h2>Виробник</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="CORT">
+                                <input type="checkbox" name="prod_name" id="CORT" value="CORT">
+                                <h3>CORT</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="ESP">
+                                <input type="checkbox" name="prod_name" id="ESP" value="ESP">
+                                <h3>ESP</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="FUJIGEN">
+                                <input type="checkbox" name="prod_name" id="FUJIGEN" value="FUJIGEN">
+                                <h3>FUJIGEN</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="PARKSONS">
+                                <input type="checkbox" name="prod_name" id="PARKSONS" value="PARKSONS">
+                                <h3>PARKSONS</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="WARWICK">
+                                <input type="checkbox" name="prod_name" id="WARWICK" value="WARWICK">
+                                <h3>WARWICK</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="YAMAHA">
+                                <input type="checkbox" name="prod_name" id="YAMAHA" value="YAMAHA">
+                                <h3>YAMAHA</h3>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes3"><h2>Форма корпусу</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Explorer">
+                                <input type="checkbox" name="body" id="Explorer" value="Explorer">
+                                <h3>Explorer</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Singlecut (LP)">
+                                <input type="checkbox" name="body" id="Singlecut (LP)" value="Singlecut (LP)">
+                                <h3>Singlecut (LP)</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Stratocaster">
+                                <input type="checkbox" name="body" id="Stratocaster" value="Stratocaster">
+                                <h3>Stratocaster</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Super Strat">
+                                <input type="checkbox" name="body" id="Super Strat" value="Super Strat">
+                                <h3>Super Strat</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Tele">
+                                <input type="checkbox" name="body" id="Tele" value="Tele">
+                                <h3>Tele</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Vintage">
+                                <input type="checkbox" name="body" id="Vintage" value="Vintage">
+                                <h3>Vintage</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Vintage">
+                                <input type="checkbox" name="body" id="Vintage" value="Vintage">
+                                <h3>БАС-ГІТАРА</h3>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes4"><h2>Матеріал корпусу</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Агатіс">
+                                <input type="checkbox" name="body_material" id="Агатіс" value="Агатіс">
+                                <h3>Агатіс</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Афзелія">
+                                <input type="checkbox" name="body_material" id="Афзелія" value="Афзелія">
+                                <h3>Афзелія</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Бубінга">
+                                <input type="checkbox" name="body_material" id="Бубінга" value="Бубінга">
+                                <h3>Бубінга</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Клен">
+                                <input type="checkbox" name="body_material" id="Клен" value="Клен">
+                                <h3>Клен</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Червоне дерево">
+                                <input type="checkbox" name="body_material" id="Червоне дерево" value="Червоне дерево">
+                                <h3>Червоне дерево</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Липа">
+                                <input type="checkbox" name="body_material" id="Липа" value="Липа">
+                                <h3>Липа</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Меранті">
+                                <input type="checkbox" name="body_material" id="Меранті" value="Меранті">
+                                <h3>Меранті</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Овангкол">
+                                <input type="checkbox" name="body_material" id="Овангкол" value="Овангкол">
+                                <h3>Овангкол</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Вільха">
+                                <input type="checkbox" name="body_material" id="Вільха" value="Вільха">
+                                <h3>Вільха</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Тополя">
+                                <input type="checkbox" name="body_material" id="Тополя" value="Тополя">
+                                <h3>Тополя</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Цілісна деревина">
+                                <input type="checkbox" name="body_material" id="Цілісна деревина" value="Цілісна деревина">
+                                <h3>Цілісна деревина</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Не заявлено">
+                                <input type="checkbox" name="body_material" id="Не заявлено" value="Не заявлено">
+                                <h3>Не заявлено</h3>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes5"><h2>Мензура</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="24.75">
+                                <input type="checkbox" name="scale" id="24.75" value='24.75"'>
+                                <h3>24.75"</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="25.5">
+                                <input type="checkbox" name="scale" id="25.5" value='25.5"'>
+                                <h3>25.5"</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="32">
+                                <input type="checkbox" name="scale" id="32" value='32"'>
+                                <h3>32"</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="34">
+                                <input type="checkbox" name="scale" id="34" value='34"'>
+                                <h3>34"</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Мультимензур">
+                                <input type="checkbox" name="scale" id="Мультимензур" value="Мультимензур">
+                                <h3>Мультимензур</h3>
+                            </label>
+                        </div>                        
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes6"><h2>К-ть струн</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="4">
+                                <input type="checkbox" name="strings" id="4" value="4">
+                                <h3>4</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="5">
+                                <input type="checkbox" name="strings" id="5" value="5">
+                                <h3>5</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="6">
+                                <input type="checkbox" name="strings" id="6" value="6">
+                                <h3>6</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="7">
+                                <input type="checkbox" name="strings" id="7" value="7">
+                                <h3>7</h3>
+                            </label>
+                        </div>                     
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes7"><h2>К-ть ладів</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="20">
+                                <input type="checkbox" name="frets" id="20" value="20">
+                                <h3>20</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="21">
+                                <input type="checkbox" name="frets" id="21" value="21">
+                                <h3>21</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="22">
+                                <input type="checkbox" name="frets" id="22" value="22">
+                                <h3>22</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="24">
+                                <input type="checkbox" name="frets" id="24" value="24">
+                                <h3>24</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="26">
+                                <input type="checkbox" name="frets" id="26" value="26">
+                                <h3>26</h3>
+                            </label>
+                        </div>                     
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes8"><h2>Матеріал грифа</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Венге">
+                                <input type="checkbox" name="fretboard_material" id="Венге" value="Венге">
+                                <h3>Венге</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Клен">
+                                <input type="checkbox" name="fretboard_material" id="Клен" value="Клен">
+                                <h3>Клен</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Червоне дерево">
+                                <input type="checkbox" name="fretboard_material" id="Червоне дерево" value="Червоне дерево">
+                                <h3>Червоне дерево</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Овангкол">
+                                <input type="checkbox" name="fretboard_material" id="Овангкол" value="Овангкол">
+                                <h3>Овангкол</h3>
+                            </label>
+                        </div>                  
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes9"><h2>Матеріал накладки грифа</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Венге">
+                                <input type="checkbox" name="fretboard_pad_material" id="Венге" value="Венге">
+                                <h3>Венге</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Мербау">
+                                <input type="checkbox" name="fretboard_pad_material" id="Мербау" value="Мербау">
+                                <h3>Мербау</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Палісандр">
+                                <input type="checkbox" name="fretboard_pad_material" id="Палісандр" value="Палісандр">
+                                <h3>Палісандр</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Овангкол">
+                                <input type="checkbox" name="fretboard_pad_material" id="Овангкол" value="Овангкол">
+                                <h3>Овангкол</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Чорне дерево">
+                                <input type="checkbox" name="fretboard_pad_material" id="Чорне дерево" value="Чорне дерево">
+                                <h3>Чорне дерево</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Ятоба">
+                                <input type="checkbox" name="fretboard_pad_material" id="Ятоба" value="Ятоба">
+                                <h3>Ятоба</h3>
+                            </label>
+                        </div>                   
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes10"><h2>Тип кріплення грифа</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="Вклеєний гриф">
+                                <input type="checkbox" name="neck_attachment" id="Вклеєний гриф" value="Вклеєний гриф">
+                                <h3>Вклеєний гриф</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Гриф на болтах">
+                                <input type="checkbox" name="neck_attachment" id="Гриф на болтах" value="Гриф на болтах">
+                                <h3>Гриф на болтах</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Наскрізний гриф">
+                                <input type="checkbox" name="neck_attachment" id="Наскрізний гриф" value="Наскрізний гриф">
+                                <h3>Наскрізний гриф</h3>
+                            </label>
+                        </div>                
+                    </div>
+                </div>
+                <hr style="margin-top: 20px; margin-bottom: 7px;">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes11"><h2>Бридж</h2></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="TOM + StopBar">
+                                <input type="checkbox" name="bridge" id="TOM + StopBar" value="TOM + StopBar">
+                                <h3>TOM + StopBar</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Тремоло Bigsby">
+                                <input type="checkbox" name="bridge" id="Тремоло Bigsby" value="Тремоло Bigsby">
+                                <h3>Тремоло Bigsby</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Тремоло Floyd Rose">
+                                <input type="checkbox" name="bridge" id="Тремоло Floyd Rose" value="Тремоло Floyd Rose">
+                                <h3>Тремоло Floyd Rose</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Тремоло Vintage">
+                                <input type="checkbox" name="bridge" id="Тремоло Vintage" value="Тремоло Vintage">
+                                <h3>Тремоло Vintage</h3>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label for="Фіксований">
+                                <input type="checkbox" name="bridge" id="Фіксований" value="Фіксований">
+                                <h3>Фіксований</h3>
+                            </label>
+                        </div>                
+                    </div>
+                </div>
+                
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="catalogue">
+        
+        <div class="filters-name">
+            <hr><h1>Товари</h1>
+            <div class="sort-methods">
+                <form action="{% url 'catalogue_filtered' %}" method="GET">
+                <label for="sortMethod">Сортування:</label>
+                <select name="sortMethod" id="sortMethod" onchange="this.form.submit()">
+                    <option value="">Без сортування</option>
+                    <option value="price_asc">Від найменшої ціни</option>
+                    <option value="price_desc">Від найбільшої ціни</option>
+                    <option value="name_asc">Від А до Я</option>
+                    <option value="name_desc">Від Я до А</option>
+                    <option value="discount_desc">Від найбільшої знижки</option>
+                </select>
+            </div>
+        </form>
+            {% for obj in context %}
+                <a class="guitar" href="{% url 'guitar_detail' obj.id %}">
+                    <div class="shop-block">
+                        <img src="data:image/png;base64, {{ obj.image }}">
+                        <h3>{{ obj.prod_name }} {{ obj.model }}</h3>
+                        <h4>{{ obj.prod_price }}грн</h4>
+                    </div>
+                </a>
+            {% endfor %}
+            <script>
+                function saveCheckboxState() {
+                    var form = document.getElementById("guitarForm");
+                    var checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                    
+                    var state = {};
+                    checkboxes.forEach(function(checkbox) {
+                        state[checkbox.id] = checkbox.checked;
+                    });
+                    
+                    localStorage.setItem('checkboxState', JSON.stringify(state));
+                }
+                
+                function restoreCheckboxState() {
+                    var state = localStorage.getItem('checkboxState');
+                    if (state) {
+                        state = JSON.parse(state);
+                        var form = document.getElementById("guitarForm");
+                        var checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                        
+                        checkboxes.forEach(function(checkbox) {
+                            if (state[checkbox.id] !== undefined) {
+                                checkbox.checked = state[checkbox.id];
+                            }
+                        });
+                    }
+                }
+
+                function resetCheckboxState() {
+                    var form = document.getElementById("guitarForm");
+                    var checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                    
+                    checkboxes.forEach(function(checkbox) {
+                        checkbox.checked = false;
+                    });
+                    
+                    saveCheckboxState(); // Зберегти новий стан чекбоксів в localStorage
+                    }
+                document.getElementById('sortMethod').addEventListener('change', function() {
+                    this.form.submit();
+                });                  
+
+                function submitForm() {
+                    saveCheckboxState();
+                  
+                    var form = document.getElementById("guitarForm");
+                    var checkboxes1 = form.querySelectorAll('input[name="type"]:checked');
+                    var checkboxes2 = form.querySelectorAll('input[name="prod_name"]:checked');
+                    var checkboxes3 = form.querySelectorAll('input[name="body"]:checked');
+                    var checkboxes4 = form.querySelectorAll('input[name="strings"]:checked');
+                    var checkboxes5 = form.querySelectorAll('input[name="body_material"]:checked');
+                    var checkboxes6 = form.querySelectorAll('input[name="neck_attachment"]:checked');
+                    var checkboxes7 = form.querySelectorAll('input[name="scale"]:checked');
+                    var checkboxes8 = form.querySelectorAll('input[name="bridge"]:checked');
+                    var checkboxes9 = form.querySelectorAll('input[name="frets"]:checked');
+                    var checkboxes10 = form.querySelectorAll('input[name="fretboard_material"]:checked');
+                    var checkboxes11 = form.querySelectorAll('input[name="fretboard_pad_material"]:checked');
+                    var values = Array.from(checkboxes1).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var prodName = Array.from(checkboxes2).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var body = Array.from(checkboxes3).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var strings = Array.from(checkboxes4).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var bodyMaterial = Array.from(checkboxes5).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var neckAttachment = Array.from(checkboxes6).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var scale = Array.from(checkboxes7).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var bridge = Array.from(checkboxes8).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var frets = Array.from(checkboxes9).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var fretboardMaterial = Array.from(checkboxes10).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+                    var fretboardPadMaterial = Array.from(checkboxes11).map(function(checkbox) {
+                        return checkbox.value;
+                    });
+
+                    var minPrice = document.getElementById("minPrice").value;
+                    var maxPrice = document.getElementById("maxPrice").value; 
+                    
+                    // Формування URL-адреси з усіма змінними
+                    var url = 'http://127.0.0.1:8000/guitarshop/catalogue/filtered/'
+                    url = url + '?type=' + values.join(',') +
+                        '&prod_name=' + prodName.join(',') +
+                        '&body=' + body.join(',') +
+                        '&strings=' + strings.join(',') +
+                        '&body_material=' + bodyMaterial.join(',') +
+                        '&neck_attachment=' + neckAttachment.join(',') +
+                        '&scale=' + scale.join(',') +
+                        '&bridge=' + bridge.join(',') +
+                        '&frets=' + frets.join(',') +
+                        '&fretboard_material=' + fretboardMaterial.join(',') +
+                        '&fretboard_pad_material=' + fretboardPadMaterial.join(',') +
+                        '&prod_price__min=' + minPrice +
+                        '&prod_price__max=' + maxPrice;
+                
+                    window.location.href = url;
+                }
+                                
+                document.addEventListener('DOMContentLoaded', function() {
+                    restoreCheckboxState();
+                });
+                
+                window.addEventListener('beforeunload', function() {
+                    saveCheckboxState();
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'template.html' %}
+{% block title %}Оформлення замовлення{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="block_order">
+        <h1>Оформлення замовлення</h1>
+        <form method="POST" action="{% url 'order' guitar.0.id %}">
+        {% csrf_token %}
+        <div>
+            <label for="customer_name">Ваше повне ім'я:</label>
+            <textarea type="text" id="customer_name" name="customer_name" required></textarea>
+        </div>
+        <div>
+            <label for="customer_address">Адреса відділення пошти:</label>
+            <textarea type="text" id="customer_address" name="customer_address" required></textarea>
+        </div>
+        <div>
+            <label for="customer_phone">Ваш номер телефону:</label>
+            <textarea type="tel" id="customer_phone" name="customer_phone" required></textarea>
+        </div>
+        <button type="submit" class="SubmitBtn">Оформити замовлення</button>
+        <p>*після оформлення замовлення з вами звяжеться менеджер для уточнення</p>
+        </form>
+        <div class="shop-block">
+            <a class="guitar" href="{% url 'guitar_detail' guitar.0.id %}">
+                <img src="data:image/png;base64, {{ guitar.1.image }}">
+                <h3>{{ guitar.0.prod_name }} {{ guitar.0.model }}</h3>
+                <h4>{{ guitar.0.prod_price }}грн</h4>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

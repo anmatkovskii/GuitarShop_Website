@@ -1,0 +1,78 @@
+{% extends 'template.html' %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="cards-content">
+            <div class="content-popular">
+                <hr><h1>Популярні товари</h1>
+                {% for obj in context %}
+                <a class="guitar" href="{% url 'guitar_detail' obj.id %}">
+                    <div class="content-block">
+                        <img src="data:image/png;base64, {{ obj.image }}">
+                        <h3>{{ obj.prod_name }} {{ obj.model }}</h3>
+                        <h4>{{ obj.prod_price }}грн</h4>
+                    </div>
+                </a>
+                {% endfor %}
+                    <div class="content-more">
+                        <a href="{% url 'catalogue' %}"><h3>БІЛЬШЕ<br>
+                            ПОПУЛЯРНИХ<br>
+                            ТОВАРІВ</h3></a>
+                    </div>
+            </div>
+            <div class="content-new">   
+                <hr><h1>Новинки</h1>
+                {% for obj in date %}
+                <a class="guitar" href="{% url 'guitar_detail' obj.id %}">
+                    <div class="content-block">
+                        <img src="data:image/png;base64, {{ obj.image }}">
+                        <h3>{{ obj.prod_name }} {{ obj.model }}</h3>
+                        <h4>{{ obj.prod_price }}грн</h4>
+                    </div>
+                </a>
+                {% endfor %}
+                <div class="content-more">
+                    <a href="{% url 'catalogue' %}"><h3>БІЛЬШЕ<br>
+                        НОВИНОК</h3></a>
+                </div>
+            </div>
+            <div class="content-discounts">
+                <hr><h1>Знижки</h1>
+                {% for obj in discount %}
+                <a class="guitar" href="{% url 'guitar_detail' obj.id %}">
+                    <div class="content-block">
+                        <img src="data:image/png;base64, {{ obj.image }}">
+                        <h3>{{ obj.prod_name }} {{ obj.model }}</h3>
+                        <h4>{{ obj.prod_price }}грн</h4>
+                    </div>
+                </a>
+                {% endfor %}
+                <div class="content-more">
+                    <a href="{% url 'catalogue' %}"><h3>БІЛЬШЕ<br>
+                        АКЦІЙНИХ<br>
+                        ТОВАРІВ</h3></a>
+                </div>
+            </div>
+        </div>
+        <div class="news-blog">
+            <div class="news">
+                <hr><h1>Новини</h1>
+                {% for obj in news %}
+                <div class="new">
+                    <img src="data:image/png;base64, {{ obj.image }}">
+                    <h1>{{ obj.new_name }}</h1>
+                    <p>{{ obj.date_add }}</p>
+                    <p>{{ obj.content }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="content-video">
+            <iframe width="350" height="200" src="https://www.youtube.com/embed/mhW67WdDbX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="350" height="200" src="https://www.youtube.com/embed/mhW67WdDbX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="350" height="200" src="https://www.youtube.com/embed/mhW67WdDbX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    {% endblock %}

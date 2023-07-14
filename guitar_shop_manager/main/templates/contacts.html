@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+{% block title %}Контакти{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="content">
+    <div class="block_contacts">
+        <h1>Контактна інформація</h1>
+        <p><b>Адреса:</b><br>
+<br>
+        08361, Київ, вул. Коновальця 31-Д<br>
+<br>
+        <br>
+
+        <b>Гаряча лінія:</b><br>
+        <br>
+        0(800) 84-27-47 (безкоштовно зі стаціонарних телефонів по Україні)<br>
+<br>
+        (067) 466-66-77<br>
+<br>
+        (066) 455-21-23<br>
+<br>
+        
+<br>
+        <b>Графік роботи:</b><br>
+<br>
+    ПН-ПТ : 10:00 - 19:00<br>
+    СБ-НД : 10:00 - 15:00<br>
+    <br>
+        
+<br>
+    <b>Ми в соцмережах:</b>
+</p>
+<img src="{% static 'img/social/telegram.png' %}">
+<img src="{% static 'img/social/instagram.png' %}">
+<img src="{% static 'img/social/youtube.png' %}">
+    </div>
+</div>
+{% endblock %}

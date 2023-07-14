@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+    <title>{% block title %}   {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="header-menu-text">
+            <div class="logo-text">
+                <a class="button" href="{% url 'main_page' %}"><h1>GUITAR<br>SHOP.UA</h1></a>
+            </div>
+            <div class="nav-buttons">
+                <a class="button" href="{% url 'catalogue' %}"><h1>ГІТАРИ</h1></a>
+                <a class="button" href="{% url 'about_us' %}"><h1>ПРО НАС</h1></a>
+                <a class="button" href="{% url 'contacts' %}"><h1>КОНТАКТИ</h1></a>
+                <a class="button" href="{% url 'shipping' %}"><h1>ДОСТАВКА І ОЛПАТА</h1></a>
+            </div>
+        </div>
+    </header>
+
+        {% block content %}
+
+        {% endblock %}
+
+    <footer>
+        <div class="worktime">
+            <table>
+                <tr>
+                    <td>ПН-ПТ : 10:00 - 19:00</td>
+                </tr>
+                <tr>
+                    <td>СБ-НД : 10:00 - 15:00</td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</body>
+</html>

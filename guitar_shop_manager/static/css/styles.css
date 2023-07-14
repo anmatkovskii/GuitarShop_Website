@@ -1,0 +1,1100 @@
+* {
+    background-color: #fff8dc;
+    margin: 0;
+	padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    position: relative;
+	min-height: 100%;
+}
+
+header {
+    background-color: #8b0000;
+}
+
+.header-menu-text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+    background-color: #8b0000;
+}
+
+.header-menu-text div {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(139, 69, 19, 0);
+}
+
+.logo-text h1 { 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: 20px; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #fffbea;
+    background-color: rgba(139, 69, 19, 0);
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+} 
+
+.nav-buttons h1 { 
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: 20px; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 500; 
+    line-height: 26.4px;
+    color: #fff8dc;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(139, 69, 19, 0);
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+} 
+    
+.button {
+    text-decoration: none;
+    background-color: rgba(139, 69, 19, 0);
+}
+
+.button h1:hover {
+    color:rgb(120, 120, 120);
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+    padding-bottom: 140px;
+}
+
+.cards-content {
+    display: inline-block;
+    width: 640px;
+    margin-right: 10px;
+}
+
+.news-blog {
+    position: relative;
+    display: inline-block;
+    width: 434px;
+    height: 897px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.content img {
+    max-width: 126px;
+    max-height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    border-radius: 15px;
+}
+
+.new img {
+    height: 73px;
+    margin-left: 4px;
+}
+
+.content-block {
+    margin-top: 50px;
+    height: 180px;
+    width: 130px;
+    border: 5px solid rgba(255, 255, 255, 0.17);
+    border-radius: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: White;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 1px 1px 15px 1px #000000;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.content-block img {
+    height: 110px;
+}
+
+.content-new {
+    margin-top: 25px;
+    position: relative;
+}
+
+.content-discounts {
+    margin-top: 30px;
+    position: relative;
+}
+
+.content-popular {
+    margin-top: 30px;
+    position: relative;
+}
+
+.content h1 {
+    position: absolute;
+    top: -16px;
+    width: 150px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+    display: block;
+    background-color: #fff8dc;
+    margin: auto;
+    text-align: center;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.cards-content hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.news {
+    margin-top: 30px;
+    position: relative;
+}
+
+.news hr {
+    margin-top: 55px;
+    margin-bottom: 30px;
+    color:#8b0000;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.new {
+    margin-top: 20px;
+    width: 410px;
+    height: 80px;
+    border: 5px solid rgba(255, 255, 255, 0.17);
+    border-radius: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: White;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 1px 1px 15px 1px #000000;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.content-popular h1 {
+    width: 300px;
+    top: -16px;
+    background-color: #fff8dc;
+}
+
+h3 {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 12px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 16px;
+    color: #101010;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(139, 69, 19, 0);
+    margin: auto;
+    text-align: center;
+}
+
+h4 {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 16px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 18px;
+    color: #8b0000;
+    vertical-align: middle;
+    background-color: rgba(139, 69, 19, 0);
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;
+    float: right;
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+    background-color: #8b0000;
+}
+
+.content-more {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.content-more a{
+    margin-top: 50px;
+    height: 180px;
+    width: 130px;
+    border: 5px solid rgba(255, 255, 255, 0.17);
+    border-radius: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: White;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 1px 1px 15px 1px #000000;
+    margin-right: 8px;
+    margin-left: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.content-more h3 {
+    font-size: 18px;
+    vertical-align: middle;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.content-more a:hover {
+    transform: scale(1.1);
+    
+}
+
+
+.content-video {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    position: relative;
+    text-align: center;
+    display: table;
+    left: 8px;
+}
+
+iframe {
+    float: left;
+    padding-right: 16px;
+}
+
+.filters-block {
+    position: relative;
+    display: inline-block;
+    width: 270px;
+    margin-right: 10px;
+}
+
+.filters-block hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.filters-name {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.filters-block h1 {
+    position: absolute;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    width: 130px;
+    background-color: #fff8dc;
+}
+
+.filter-form {
+    margin-top: 55px;
+    height: 270px;
+}
+
+.filter-form h3 {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+.catalogue hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.catalogue {
+    position: relative;
+    display: inline-block;
+    width: 800px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.catalogue h1 {
+    width: 120px;
+}
+
+.shop-block {
+    margin-top: 30px;
+    height: 250px;
+    width: 171px;
+    border: 5px solid rgba(255, 255, 255, 0.17);
+    border-radius: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: White;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 1px 1px 15px 1px #000000;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.shop-block h3{
+    font-size: 18px;
+    text-align: center;
+    display: block;
+}
+
+.shop-block img{
+    height: 150px;
+    margin-bottom: 5px;
+}
+
+fieldset {
+    
+    border: none;
+}
+
+.form-group {
+    padding-top: 10px;
+}
+.form-group h2 {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 22px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+}
+
+.form-group h3 {
+    font-size: 20px; 
+    text-align: left;
+    width: 200px
+}
+
+.checkbox {
+    margin:10px;
+}
+
+.checkbox label {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.SubmitBtn {
+	background-color:#44c767;
+	border-radius:6px;
+    border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+    text-align: center;
+    width: 208px;
+	text-shadow:0px 1px 0px #2f6627;
+	&:hover {
+	background-color:#5cbf2a;
+}
+ &:active {
+	position:relative;
+	top:1px;
+}
+ }
+        
+ .UnSubmitBtn {
+    margin-top: 10px;
+	background-color:#c74444;
+	border-radius:6px;
+    border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+    text-align: center;
+	text-decoration:none;
+    width: 208px;
+	text-shadow:0px 1px 0px #662727;
+	&:hover {
+	background-color:#bf2a2a;
+}
+ &:active {
+	position:relative;
+	top:1px;
+}
+ }
+
+.price_input {
+    margin-left: 10px;
+}
+
+.price_input input {
+    width: 100px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield; /* Застосовувати на Firefox */
+  }
+
+.minmax {
+    display:inline-block;
+    margin-left: 10px;
+}
+
+.minmax p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+}
+
+.minmax1 {
+    display:inline-block;
+    margin-left: 90px;
+}
+
+.minmax1 p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+}
+
+.sort-methods {
+    margin-top: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    color: #101010;
+}
+
+.guitar {
+    text-decoration: none;
+    width: 50px;
+}
+
+.background-guitar {
+    position: relative;
+}
+
+.img-section {
+    margin-top: 30px;
+    height: 500px;
+    width: 600px;
+    border: 5px solid rgba(255, 255, 255, 0.17);
+    border-radius: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: White;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 1px 1px 15px 1px #000000;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.img-section img {
+    height: 390px;
+    max-width: 590px;
+}
+
+.zoom-button {
+    cursor: pointer;
+    
+}
+
+.zoomed {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8);
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out; /* Плавна анімація збільшення */
+}
+
+.additional-image img {
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 1px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.additional-image {
+    width: 580px;
+    margin-left: 10px;
+    background-color: white;
+    position: absolute;
+    bottom: 5px;
+}
+
+.prev-button,
+.next-button {
+  position: fixed;
+  bottom: 20px; /* Розташування внизу екрана */
+  left: 50%; /* Розташування посередині екрана */
+  transform: translateX(-50%) scale(1.8);
+  z-index: 9999; /* Виводимо кнопки поверх іншого вмісту */
+  background-color: #ffffff6c;
+  border: none;
+  font-size: 24px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.prev-button {
+    left: 48%;
+}
+
+.next-button {
+    left: 52%;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: scale(1.8);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color:#00000000;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modalImg {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.zoomed {
+    transform: scale(2);
+}
+
+#imgModal.hidden {
+  display: none;
+}
+
+.guitar-name{
+    display: inline-block;
+}
+
+.guitar-name h1 {
+    top: 0;
+    margin-top: 35px;
+    width: 500px;
+    text-align: left;
+    font-size: 60px;
+    line-height: 50px;
+}
+
+.guitar-name h4{
+    font-size: 35px;
+    position: absolute;
+    margin-left: 28px;
+    top: 130px;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 32px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px;
+    padding: 30px 60px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 28px;
+}
+
+.buy-button:hover {
+  background-color: #45a049;
+}
+
+.buy-button:active {
+  background-color: #3e8e41;
+}
+
+.buy-block p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700;
+    margin-left: 30px;
+    top: 40px;
+    position: relative;
+    top: -50px;
+}
+
+.description {
+    width: 1100px;
+    margin-top: 55px;
+    display: inline-block;
+    position: relative;
+}
+
+.description h1{
+    width: 1100px;
+}
+
+.description h2{
+    width: 1100px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    color: #101010;
+    display: block;
+    background-color: #fff8dc;
+    margin: auto;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.description p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 10px;
+    text-indent: 50px;
+}
+
+.table-continer {
+    display: flex;
+    justify-content: center;
+}
+
+
+table {
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    width: 50%;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 20px;
+}
+
+table td:first-child {
+  background-color: #bababa; /* Темнішо сірий колір для лівого стовбця */
+  font-weight: bold; /* Жирний шрифт для тексту у лівому стовбці */
+}
+
+table td:nth-child(2n) {
+  background-color: #d1d1d1; /* Світліший колір для правої колонки */
+}
+
+table td {
+  padding: 8px;
+  border: 1px solid #dfdfdf;
+}
+
+table tr:nth-child(even) {
+  background-color: #d1d1d1;
+}
+
+.description hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.review_block {
+    margin-top: 20px;
+}
+
+.review_block h3{
+    font-size: 25px;
+    margin-left:50px;
+    display: inline-block;
+}
+
+.review_block p {
+    margin-top: 20px;
+}
+
+.review_block hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 1px solid rgb(167, 0, 0);
+}
+
+.add_review h2 {
+    font-size: 25px;
+}
+
+
+.stars input[type="radio"] {
+    display: none;
+  }
+  
+.stars label {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url("path/to/star-icon.png"); /* Замініть шлях на свій шлях до зображення зірочки */
+    background-size: cover;
+    color:gold;
+  }
+  
+.stars input[type="radio"]:checked ~ label {
+    background-image: url("path/to/star-filled-icon.png"); /* Замініть шлях на свій шлях до зображення заповненої зірочки */
+  }
+
+.user_name,
+.review_content,
+.rating {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 10px;
+    text-indent: 50px;
+}
+
+.add_review a {
+    width: 150px;
+    margin-top:25px;
+    margin-left: 50px;
+}
+
+.user_name label,
+  .review_content label,
+  .rating label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+.block_order {
+    display: inline-block;
+    margin-left: 325px;
+    margin-right: auto;
+    width: 450px;
+}
+
+.block_order h1 {
+    max-width: 450px;
+    margin-left: 0;
+}
+
+.block_order p {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 10px;
+    width: 450px;
+}
+
+.block_order .shop-block{
+    margin-left: 135px;
+}
+
+.block_order label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 10px;
+}
+
+.block_order textarea {
+    height: 50px;
+    width: 450px;
+    border-radius: 10px;
+    
+}
+
+.block_order button {
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 250px;
+}
+
+
+.user_name input,
+.review_content textarea {
+    margin-left: 50px;
+
+}
+
+.star-rating {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 40px;
+    color: #000;
+    cursor: pointer;
+    background-color:#00000000;
+  }
+  
+  .star-rating:hover,
+  .star-rating.selected {
+    color: #FFD700;
+  }
+
+  .shop-block {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.shop-block:hover {
+    transform: scale(1.1);
+}
+
+.content-block {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.content-block:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.block_about_us h3{
+    font-size: 25px;
+    margin-left:50px;
+    display: inline-block;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 10px;
+    text-indent: 50px;
+    width: 1050px;
+}
+
+.block_about_us p {
+    margin-top: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+    margin-top: 30px;
+    text-indent: 50px;
+}
+
+.block_about_us hr {
+    color:#8b0000;
+    margin-top: 55px;
+    border: 2px solid rgb(167, 0, 0);
+}
+
+.block_about_us h1 {
+    position: relative;
+    top: 0;
+    width: 1100px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.worktime {
+    background-color:#8b0000;
+    display: flex;
+    justify-content: center;
+}
+
+
+.worktime table {
+    background-color: #8b0000;
+}
+
+.worktime table td, 
+.worktime table tr{
+    background-color:#8b0000;
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.block_contacts p{
+    font-size: 20px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #101010;
+}
+
+.block_contacts h1 {
+    position: relative;
+    top: 0;
+    width: 1100px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    
+}
+
+.block_contacts b {
+    font-size: 30px;
+}
+
+.block_contacts img {
+    display: inline-block;
+    max-height: 50px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.block_order h1 {
+    position: relative;
+    top: 0;
+    width: 1100px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    
+}
+
+.new img {
+    position: relative;
+    max-width: 100px;
+}
+
+.new h1 {
+    position: relative;
+    font-size: 14px;
+    background-color:#00000000;
+    margin-left: 50px;
+    margin: 0;
+    margin-left: 110px;
+    margin-top: 10px;
+    top: -90px;
+}
+
+.new p {
+    position: relative;
+    margin-left: 110px;
+    background-color:#00000000;
+    margin-top: 10px;
+    top: -100px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    color: #101010;
+    font-size: 12px;
+}

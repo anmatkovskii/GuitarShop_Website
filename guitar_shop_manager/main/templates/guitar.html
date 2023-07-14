@@ -1,0 +1,248 @@
+{% extends 'template.html' %}
+
+{% block title %}{{ guitar.0.prod_name }} {{ guitar.0.model }}{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="background-guitar">
+        <div class="img-section">
+            <img src="data:image/png;base64, {{ guitar.1.image }}" onclick="zoomImage(this)" class="zoom-button" data-index="0">
+            <div class="additional-image">
+                <img src="data:image/png;base64, {{ guitar.2.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="1">
+                <img src="data:image/png;base64, {{ guitar.3.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="2">
+                <img src="data:image/png;base64, {{ guitar.4.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="3">
+                <img src="data:image/png;base64, {{ guitar.5.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="4">
+                <img src="data:image/png;base64, {{ guitar.6.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="5">
+                <img src="data:image/png;base64, {{ guitar.7.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="6">
+                <img src="data:image/png;base64, {{ guitar.8.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="7">
+                <img src="data:image/png;base64, {{ guitar.9.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="8">
+                <img src="data:image/png;base64, {{ guitar.10.image }}" alt="" onclick="zoomImage(this)" class="zoom-button"  data-index="9">
+                <div id="imgModal" class="modal">
+                    <span class="close" onclick="closeZoom()">&times;</span>
+                    <img class="modal-content" id="modalImg">
+                    <button onclick="prevImage()" class="prev-button">&#8249;</button>
+                    <button onclick="nextImage()" class="next-button">&#8250;</button>
+                </div>
+            </div>
+        </div>
+        <div class="guitar-name">
+            <h1>{{ guitar.0.prod_name }} {{ guitar.0.model }}</h1>
+            <h4>{{ guitar.0.prod_price }}грн</h4>
+            <div class="buy-block">
+                {% if guitar.0.present == 0 %}
+                    <p>Немає в наявності</p>
+                {% else %}
+                    <p>Є в наявності</p>
+                {% endif %}
+                    
+                <a class="buy-button" href="{% url 'order' guitar.0.id %}">Купити</a>
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        <hr style="margin-top: 20px; margin-bottom: 7px;">
+        <h2>Опис</h2>
+        <p>{{ guitar.0.description }}</p>
+        <hr style="margin-top: 20px; margin-bottom: 7px;">
+        <h2 style="margin-top: 20px;">Характеристики</h2>
+        <div class="table-continer">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Основний колір</td>
+                        <td>{{ guitar.0.color }}</td>
+                    </tr>
+                    <tr>
+                        <td>Форма корпусу</td>
+                        <td>{{ guitar.0.body }}</td>
+                    </tr>
+                    <tr>
+                        <td>Матеріал корпусу</td>
+                        <td>{{ guitar.0.body_material }}</td>
+                    </tr>
+                    <tr>
+                        <td>Мензура</td>
+                        <td>{{ guitar.0.scale }}</td>
+                    </tr>
+                    <tr>
+                        <td>Кількість струн</td>
+                        <td>{{ guitar.0.strings }}</td>
+                    </tr>
+                    <tr>
+                        <td>Заводські струни</td>
+                        <td>{{ guitar.0.default_strings }}</td>
+                    </tr>
+                    <tr>
+                        <td>Кількість ладів</td>
+                        <td>{{ guitar.0.frets }}</td>
+                    </tr>
+                    <tr>
+                        <td>Матеріал грифа</td>
+                        <td>{{ guitar.0.fretboard_material }}</td>
+                    </tr>
+                    <tr>
+                        <td>Матеріал накладки грифа</td>
+                        <td>{{ guitar.0.fretboard_pad_material }}</td>
+                    </tr>
+                    <tr>
+                        <td>Тип кріплення грифа</td>
+                        <td>{{ guitar.0.neck_attachment }}</td>
+                    </tr>
+                    <tr>
+                        <td>Тип бріджа</td>
+                        <td>{{ guitar.0.bridge }}</td>
+                    </tr>
+                    <tr>
+                        <td>Тип звукознімачів</td>
+                        <td>{{ guitar.0.pickups }}</td>
+                    </tr>
+                    <tr>
+                        <td>Кілки</td>
+                        <td>{{ guitar.0.pegs }}</td>
+                    </tr>
+                    <tr>
+                        <td>Країна-виробник</td>
+                        <td>{{ guitar.0.country }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr style="margin-top: 20px; margin-bottom: 7px;">
+        <h2 style="margin-top: 20px;">Відгуки</h2>
+        <div class="review_block">
+            {% for el in reviews %}
+            <h3>{{ el.user_name }}</h3>
+            <h3 style="color:gold">{% for _ in ''|rjust:el.rating %} &#9733; {% endfor %}</h3>
+            <p>{{ el.content }}</p>
+            <hr style="margin-top: 20px; margin-bottom: 7px;">
+            {% endfor %}
+        </div>
+        <div class="add_review">
+            <h2 style="margin-top: 20px;">Додати відгук до товару</h2>
+            <form  method="POST">
+                {% csrf_token %}
+              <div class="user_name">
+                <label for="user_name">Ваше ім'я:</label>
+                <input type="text" id="user_name" name="user_name" required>
+              </div>
+              <div class="review_content">
+                <label for="review_content">Текст відгуку:</label>
+                <textarea style="width: 1050px; height: 100px; resize: none;" id="review_content" name="review_content" required></textarea>
+              </div>
+              <div class="rating">
+                    <label for="rating">Оцінка:</label>
+                    <div class="star-rating" onclick="toggleStar(1)">&#9734;</div>
+                    <div class="star-rating" onclick="toggleStar(2)">&#9734;</div>
+                    <div class="star-rating" onclick="toggleStar(3)">&#9734;</div>
+                    <div class="star-rating" onclick="toggleStar(4)">&#9734;</div>
+                    <div class="star-rating" onclick="toggleStar(5)">&#9734;</div>
+              </div>
+              
+              <a class="SubmitBtn">Надіслати відгук</a>
+            </form>
+          </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.SubmitBtn').addEventListener('click', function(event) {
+    event.preventDefault();  // Зупиняє стандартну поведінку кнопки, яка перезавантажує сторінку
+    
+    // Отримати дані форми
+    var userName = document.getElementById('user_name').value;
+    var reviewContent = document.getElementById('review_content').value;
+    var rating = selectedStars.length;
+    
+    // Створити об'єкт з даними для відправки
+    var formData = new FormData();
+    formData.append('user_name', userName);
+    formData.append('review_content', reviewContent);
+    formData.append('rating', rating);
+    
+    // Створити об'єкт XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    
+    // Встановити метод та URL для запиту
+    xhr.open('POST', "{% url 'guitar_detail' guitar.0.id %}");
+    
+    // Встановити заголовок, якщо потрібно
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Додати обробник події завершення запиту
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+        console.log(xhr.responseText);  // Обробка успішної відповіді
+        } else {
+        console.error('Помилка при відправці форми');  // Обробка помилки
+        }
+    };
+    
+    // Відправити запит
+    xhr.send(formData)
+    });
+
+    var stars = document.querySelectorAll('.star-rating');
+    var selectedStars = [];
+    
+    function toggleStar(starIndex) {
+        var star = stars[starIndex - 1];
+        var isSelected = star.classList.contains('selected');
+        
+        if (isSelected) {
+        for (var i = starIndex; i < stars.length; i++) {
+            stars[i].classList.remove('selected');
+        }
+        selectedStars = selectedStars.slice(0, starIndex - 1);
+        } else {
+        for (var i = 0; i < starIndex; i++) {
+            stars[i].classList.add('selected');
+        }
+        selectedStars = Array(starIndex).fill().map((_, i) => i + 1);
+        }
+    }
+
+    var currentImageIndex = 0;
+    var modal = document.getElementById("imgModal");
+    var modalImg = document.getElementById("modalImg");
+    var currentIndex = 0;
+
+    // Додати клас "hidden" до модального вікна при завантаженні сторінки
+    window.addEventListener("load", function() {
+    modal.classList.add("hidden");
+    });
+
+    function zoomImage(element) {
+    if (modal.classList.contains("hidden")) {
+        currentIndex = parseInt(element.getAttribute("data-index"));
+        modal.classList.remove("hidden");
+        modalImg.src = element.src;
+        document.body.style.overflow = "hidden";
+    }
+    }
+
+    function closeZoom() {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+    }
+
+    var currentImageIndex = 0;
+    var images = document.getElementsByClassName('zoom-button');
+
+    function showImage(index) {
+        currentImageIndex = index;
+        var modalImg = document.getElementById('modalImg');
+        modalImg.src = images[currentImageIndex].src;
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage(currentImageIndex);
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(currentImageIndex);
+    }
+
+</script>
+{% endblock %}
